@@ -1,0 +1,35 @@
+<body>
+    <a href="home">
+    <img class="back" src="./../../assets/image/back.png" > 
+</a>
+    <div class="form-box">
+        <div class="button-box">
+          <div id="btn"> </div>
+            <button type="button" class="toggle-btn1" (click)="gotosignup()">Sign Up</button>
+            <button type="button" class="toggle-btn2" (click)="gotoSignin()">Login</button>
+          </div>
+          <form class="formu">
+              <label for="email">E-mail</label>
+              <input type="text"  [(ngModel)]= "email" [ngModelOptions] = "{standalone: true}" id="email" placeholder="Type your e-mail">
+  
+              <label for="motDePasse">Password</label>
+              <div>
+                <input type="password" [(ngModel)]= "password" [ngModelOptions] = "{standalone: true}"id="password" #passwordInput placeholder="Entrer votre mot de passe" />
+                <img src="./../../assets/image/eye.png" id="pass-icon" class="pass-icon" (click)="togglePasswordVisibility(passwordInput)" />
+              </div>
+              <div class="sous-form">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rememberme">
+                <label class="form-check-label" for="rememberme">
+                  Remember me
+                </label>
+              </div>
+              <a href="oublier-mdp">Forgot your password?</a>
+            </div>
+              <br>
+              <button type="submit" class="sumbmit-btn" (click)="Login()">Login</button>
+          </form>
+      </div>
+  
+      </body>
+  

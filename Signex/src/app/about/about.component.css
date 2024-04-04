@@ -1,0 +1,130 @@
+.typed-text {
+    overflow: hidden;
+    border-right: .15em solid orange; /* Adjust color and width as needed */
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .12em; /* Adjust letter spacing as needed */
+    animation: typing 3.5s steps(30, end), blink-caret .70s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; /* Adjust color as needed */}
+  }
+/* About Us Section Styles */
+
+.about-us {
+    padding: 100px 0;
+    margin-right: -200px;
+    background-color: #f5f5f5;
+  }
+  
+  .about-us .about-us-text {
+    padding-right: 10px;
+  }
+  
+  
+  
+  .about-us .img-fluid {
+    width: 400px;    
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .about-us .about-us-image:hover .img-fluid {
+    transform: scale(1.1);
+  }
+  
+  /* Breakpoints for adjusting image size on smaller screens */
+  
+  @media (max-width: 768px) {
+    .about-us .col-md-6 {
+      flex: 1 0 100%;
+      max-width: 100%;
+    }
+  
+    .about-us .about-us-text {
+      padding-right: 0;
+    }
+  }
+
+
+ /* Section Styles */
+
+.e-sign {
+    padding: 100px 0;
+    background-color: #f5f5f5;
+  }
+  
+  /* Image Styles */
+  
+  .e-sig-image {
+    overflow: hidden;
+    
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for image depth */
+    transition: transform 0.3s ease-in-out; /* Animation on hover */
+  }
+  
+  .e-sig-image:hover {
+    transform: scale(1.1); /* Zoom on hover */
+  }
+  
+  /* Text Styles */
+  
+  .e-sign-text {
+    padding: 0 50px; /* Adjust padding as needed */
+  }
+  
+  .e-sign-text h2 {
+    font-size: 29px; /* Adjust heading size */
+    margin-bottom: 10px;
+    position: relative; /* Required for underline animation */
+  }
+  
+  .e-sign-text h2::after {
+    content: "";
+    position: absolute;
+    width: 100%; /* Underline width */
+    height: 3px; /* Underline thickness */
+    background-color: #fea02f; /* Underline color */
+    left: 0; /* Position underline */
+    bottom: -5px; /* Position underline */
+    transform: scaleX(0); /* Initial state: underline hidden */
+    transition: transform 0.3s ease-in-out; /* Animation for underline reveal */
+  }
+  
+  .e-sign-text h2:hover::after {
+    transform: scaleX(1); /* Underline animation on hover */
+  }
+  
+  .e-sign-text p {
+    font-size: 16px; /* Adjust paragraph font size */
+    line-height: 1.5; /* Adjust line spacing for readability */
+  }
+  
+  /* Typed Text Animation (Optional) */
+  
+  .typed-textsig {
+    overflow: hidden;
+    border-right: 0.15em solid orange; /* Adjust color and width */
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em; /* Adjust letter spacing */
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; } /* Adjust color */
+  }

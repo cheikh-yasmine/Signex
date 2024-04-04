@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .logo {
+    flex: 1;
+  }
+  
+  .logo img {
+    width: 100px;
+  }
+  
+  .search {
+    display: flex;
+    flex: 2;
+    margin-right: 20px;
+  }
+  
+  .search input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+  }
+  
+  .search button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .user {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  main {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 200px;
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .sidebar li.active {
+    background-color: #e0e0e0;
+  }
+  
+  .sidebar li a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .emails {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .emails li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+  }
+  
+  .emails li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .sender {
+    display: flex;
+    align-items: center;
+    width: 20%;
+  }
+  
+  .sender img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .subject {
+    flex: 1;
+    font-weight: bold;
+  }
+  
+  .excerpt {
+    flex: 2;
+  }
+  
+  .info {
+    display: flex;
+    align-items: center;
+    width: 10%;
+    justify-content: space-between;
+  }
+  
