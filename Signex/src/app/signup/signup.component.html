@@ -1,5 +1,7 @@
+
+
 <body>
-               <a href="home">
+              <a href="home">
                 <img class="back" src="./../../assets/image/back.png" > 
                 </a>
 
@@ -16,7 +18,7 @@
 
             <form  [formGroup]="forminput">
               <label for="name"><b>Name</b><b style="color: #660909;">*</b></label>
-              <input type="text" [(ngModel)]= "username"  id="name" placeholder=" Type your Name" formControlName="name">
+              <input type="text" [(ngModel)]= "user.firstName"  id="name" placeholder=" Type your Name" formControlName="name">
                 <div class="warning-div"
                   *ngIf="!forminput.pristine && forminput.controls['name'].errors?.['required']">
                    <img src="./../../assets/image/warn.png" class="warning-icon">&nbsp; Name required 
@@ -26,17 +28,25 @@
             <form  [formGroup]="forminput1">
 
                 <label for="LastName"><b>Last Name</b><b style="color: #660909;">*</b></label>
-                <input type="text"  [(ngModel)]= "userlastname"  id="LastName" name="LastName" placeholder="  Type your Last Name" formControlName="LastName">
+                <input type="text"  [(ngModel)]= "user.lastName"  id="LastName" name="LastName" placeholder="  Type your Last Name" formControlName="LastName">
                 <div class="warning-div"
                    *ngIf="!forminput1.pristine && forminput1.controls['LastName'].errors?.['required']">
                      <img src="./../../assets/image/warn.png" class="warning-icon">&nbsp; Last Name required 
                </div>
             </form> 
-
-
             <form  [formGroup]="forminput2">
+
+              <label for="LastName"><b>Username</b><b style="color: #660909;">*</b></label>
+              <input type="text"  [(ngModel)]= "user.username"  id="username" name="username" placeholder="  Create a username" formControlName="username">
+              <div class="warning-div"
+                 *ngIf="!forminput1.pristine && forminput1.controls['LastName'].errors?.['required']">
+                   <img src="./../../assets/image/warn.png" class="warning-icon">&nbsp; Last Name required 
+             </div>
+          </form> 
+
+            <form  [formGroup]="forminput3">
               <label for="email"><b>Email</b><b style="color: #660909;">*</b></label>
-              <input type="text"  [(ngModel)]= "email" id="email"  name="email"  placeholder= "  Type your e-mail" formControlName="email">
+              <input type="text"  [(ngModel)]= "user.email" id="email"  name="email"  placeholder= "  Type your e-mail" formControlName="email">
               <div class="warning-div"
                  *ngIf="!forminput2.pristine && forminput2.controls['email'].errors?.['required']">
                   <img src="./../../assets/image/warn.png" class="warning-icon">&nbsp; Email Required 
@@ -48,9 +58,9 @@
            </form>
 
 
-          <form  [formGroup]="forminput3">
+          <form  [formGroup]="forminput4">
               <label for="password"><b>Password</b><b style="color: #660909;">*</b></label>
-              <input type="password" [(ngModel)]= "pwd"  id="password" name="password" placeholder="  Create your Password" formControlName="password">
+              <input type="password" [(ngModel)]= "user.password"  id="password" name="password" placeholder="  Create your Password" formControlName="password">
               <div class="warning-div"
                   *ngIf="!forminput3.pristine && forminput3.controls['password'].errors?.['required']">
                   <img src="./../../assets/image/warn.png" class="warning-icon">&nbsp; Create your password.
@@ -58,29 +68,33 @@
          </form>
 
 
-         <form  [formGroup]="forminput4">
+         <form  [formGroup]="forminput5">
               <label for="confirmeMdp"><b>Confirm Password</b><b style="color: #660909;">*</b></label>
               <input type="password" id="confirmeMdp" placeholder="  Confirm Password" formControlName="confirmpwd">
               <div class="warning-div"
-                  *ngIf="!forminput4.pristine && forminput4.controls['confirmpwd'].errors?.['required']">
+                  *ngIf="!forminput5.pristine && forminput5.controls['confirmpwd'].errors?.['required']">
                   <img src="./../../assets/image/warn.png" class="warning-icon">&nbsp;Confirm your password.
               </div>
                <div class="warning-div"
-                  *ngIf="forminput4.controls['confirmpwd'].value !== forminput3.controls['password'].value && forminput4.controls['confirmpwd'].touched && !forminput4.controls['confirmpwd'].errors?.['required']">
+                  *ngIf="forminput5.controls['confirmpwd'].value !== forminput4.controls['password'].value && forminput5.controls['confirmpwd'].touched && !forminput5.controls['confirmpwd'].errors?.['required']">
                   <img src="./../../assets/image/warn.png" class="warning-icon">&nbsp;Passwords do not match 
               </div>
           </form>
 
-         
-              <label for="Company">Company Name</label>
-              <input type="text"  [(ngModel)]= "usercompanyname" [ngModelOptions] = "{standalone: true}"  id="Company" name="Company" placeholder="  Type your Company Name">
-
+        <form>
+              <label for="companyName">Company Name</label>
+              <input type="text" [(ngModel)]="user.companyName" id="companyName" name="companyName"
+              placeholder="  Type your Company Name" formControlName="companyName">
+            </form>
+          <form>
               <label for="phone">Phone Number</label>
-              <input type="text"  [(ngModel)]= "userphone" [ngModelOptions] = "{standalone: true}"  id="phone" name="phone" placeholder="  Enter your phone number">
+              <input type="text" [(ngModel)]="user.phone" id="phone" name="phone"
+              placeholder=" Enter your phone number"    (keypress)="onPhoneKeyPress($event)"
+              maxlength="8" minlength="8" formControlName="phone">
+            </form>
 
              
-             <button type="submit" class="sumbmit-btn" (click)="save()"
-              >Register</button>
+             <button type="submit" class="sumbmit-btn" (click)="register()">Register</button>
           
             </form>
         </div>

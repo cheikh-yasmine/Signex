@@ -1,26 +1,42 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { Component, ElementRef, ViewChild, Renderer2, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthResponseDTO } from './auth-response.dto';
+import { UserService } from '../user.service';
+import { error } from 'jquery';
+
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
-export class SigninComponent {
+export class SigninComponent implements OnInit{
+  loginForm!: FormGroup;
 
   
-  email: string="";
-  password: string="";
-  
+  username:String="";
+  password:String="";
  
   @ViewChild('passwordInput') passwordInput!: ElementRef;
   passIcon: HTMLImageElement;
   
   constructor(private http: HttpClient,
-    private router : Router, private renderer: Renderer2 ){
+    private router : Router, private renderer: Renderer2 , private fb: FormBuilder, private userService: UserService){
       this.passIcon = document.getElementById('pass-icon') as HTMLImageElement;
   }
+  ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      username: ['', Validators.required], // Use 'username' for backend compatibility
+      password: ['', Validators.required]
+    });
+  }
+
+  
+
+
+
   togglePasswordVisibility(passwordInput: HTMLInputElement): void {
     if (passwordInput.type === 'password') {
       passwordInput.type = 'text';
@@ -30,35 +46,46 @@ export class SigninComponent {
       this.passIcon.src = './../../assets/image/eye.png';
     }
   }
+
+  
   gotosignup(){
       this.router.navigate(['signup']);
     }
     gotoSignin(){
       this.router.navigate(['signin']);
     }
-   Login(){
-    console.log(this.email);
-    console.log(this.password)
-    let bodyData={
-      email:this.email,
-      password: this.password,
-    };
-    this.http.post("http://localhost:8080/api/v1/employee/login", bodyData).subscribe((resultData:any)=>{
-      console.log(resultData);
-      if (resultData.message == "Email does Not Exists"){
-        alert("This E-mail does Not Exists");
-      }
-      else if(resultData.message== "Login Success "){
-        this.router.navigateByUrl('userhome');
-      }
-      else {
-        alert("Email or password Incorrect ");
-      }
-    })
+    login(): void {
+      const loginData = {
+        username: this.username,
+        password: this.password
+      };
+    this.userService.login(loginData)
+      .subscribe(user => {
+        if (user) {
+          console.log('Login successful');
+  
+          if (this.username == 'admin' && this.password == 'admin') {  // Use hashed password
+            this.router.navigate(['/admin']);
+          } else {
+            this.router.navigate(['/userhome']); 
+          }
+  
+          localStorage.setItem('userAuth', JSON.stringify({
+            username: user.username,
+          }));
+          localStorage.setItem('isLoggedIn', 'true');
+        } else {
+          console.log('Invalid username or password');
+        }
+      }, error => {
+        console.error('Error occurred during login:', error);
+      });
+  }
+  
   }
 
 
 
   
 
-}
+

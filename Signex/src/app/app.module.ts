@@ -18,6 +18,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { UsernavComponent } from './usernav/usernav.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { UseraboutComponent } from './userabout/userabout.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { UseraboutComponent } from './userabout/userabout.component';
      ProfileComponent,
      UsernavComponent,
      UserhomeComponent,
-     UseraboutComponent
+     UseraboutComponent,
+     AdminComponent
   ],
   imports: [
     BrowserModule,

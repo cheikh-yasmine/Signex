@@ -11,6 +11,7 @@ import { FileViewComponent } from './fileview/file-view.component';
 import { UsernavComponent } from './usernav/usernav.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { UseraboutComponent } from './userabout/userabout.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'usernav', component:UsernavComponent},
   {path: 'userhome', component:UserhomeComponent},
   {path: 'userabout', component:UseraboutComponent},
+  {path: 'admin', component:AdminComponent},
 ];
 
 @NgModule({
