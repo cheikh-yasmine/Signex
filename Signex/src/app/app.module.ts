@@ -12,8 +12,12 @@ import { MyDocComponent } from './my-doc/my-doc.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadFileComponent } from './upload-file/upload-file.component';
-import { FileViewComponent } from './file-view/file-view.component';
+import { FileViewComponent } from './fileview/file-view.component';
 import { AboutComponent } from './about/about.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UsernavComponent } from './usernav/usernav.component';
+import { UserhomeComponent } from './userhome/userhome.component';
+import { UseraboutComponent } from './userabout/userabout.component';
 
 
 @NgModule({
@@ -27,7 +31,11 @@ import { AboutComponent } from './about/about.component';
 
     UploadFileComponent,
      FileViewComponent,
-     AboutComponent
+     AboutComponent,
+     ProfileComponent,
+     UsernavComponent,
+     UserhomeComponent,
+     UseraboutComponent
   ],
   imports: [
     BrowserModule,

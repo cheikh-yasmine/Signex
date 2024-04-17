@@ -79,7 +79,8 @@
               <input type="text"  [(ngModel)]= "userphone" [ngModelOptions] = "{standalone: true}"  id="phone" name="phone" placeholder="  Enter your phone number">
 
              
-             <button type="submit" class="sumbmit-btn" (click)="save()" [disabled]="forminput.invalid || forminput1.invalid || forminput2.invalid || forminput3.invalid || forminput4.invalid || forminput4.controls['confirmpwd'].value !== forminput3.controls['password'].value || !forminput4.controls['confirmpwd'].valid">Register</button>
+             <button type="submit" class="sumbmit-btn" (click)="save()"
+              >Register</button>
           
             </form>
         </div>

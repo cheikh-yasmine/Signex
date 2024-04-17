@@ -3,4 +3,8 @@ nav{
     padding-right: 50px;
     font-size: 20px;
     color: #003f5a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
+
+.nav-item a{  color: #003f5a;}

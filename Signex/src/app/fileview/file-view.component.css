@@ -1,0 +1,155 @@
+main {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgb(237, 231, 237),rgb(248, 244, 248),rgb(244, 241, 241)) ;
+    background-repeat : no-repeat;
+    position: relative;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-brand {
+    color: rgb(255, 255, 255); /* Set text color */
+    font-size: 1.5rem; /* Set font size */
+    text-decoration: none; /* Remove underline */
+  /* Navbar header */
+  } 
+  
+  nav {
+    
+    background-color: rgb(182, 112, 182); /* Set background color to purple */
+  
+  }
+  
+  
+  .logo {
+    margin-top: 10px;
+    margin-bottom:10px;
+    cursor: pointer;
+  }
+  
+  .header {
+  
+    color: #ffffff; /* Set text color */
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Distribute space evenly between items */
+    padding: 1rem 1rem; /* Increase padding to make the header longer */
+    width: 100%; /* Set width to 100% */
+    border-radius: 15px; /* Add border radius */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+  }
+  
+  /* Navbar brand */
+  .navbar-brand {
+    color: #ffffff; /* Set text color */
+    font-size: 1.5rem; /* Set font size */
+    text-decoration: none; /* Remove underline */
+    padding-left: 0rem;
+    right: 22px;
+  }
+  
+  /* Navbar links */
+  .nav-link {
+    color: #ffffff; /* Set text color */
+    text-decoration: none; /* Remove underline */
+    padding: 0.5rem 1rem; /* Add padding */
+    padding-right: 10px;
+  }
+  
+  /* Navbar links hover state */
+  .nav-link:hover {
+    color: #ffffff; /* Change text color on hover */
+    
+  }
+  
+  .nav-link:after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ffffff;
+    position: absolute;
+    left: 22px;
+    bottom: 21px;
+    transition: 0.5s;
+  }
+  .nav-link:hover::after{
+    width:70%;
+    
+  }
+  
+ 
+ 
+  
+  
+
+
+  .recent {
+    margin-top: 20px;
+  
+    margin-left:300px;
+    padding-bottom: 200px;
+  }
+  
+  .activity-grid {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-column-gap: 1.5rem;
+  }
+  
+  .activity-card,
+  .summery-card,
+  .bday-card {
+    background-color: rgba(222, 104, 0, 0.838);
+    border-radius: 7px;
+  }
+  
+  .activity-card h3 {
+    color: #ffffff;
+    margin: 1rem;
+  }
+  
+  .activity-card table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .activity-card thead {
+    background: rgb(254,160,47);
+    text-align: left;
+  }
+  
+  th,
+  td {
+    font-size: 0.9rem;
+    padding: 1rem 1rem;
+    color: #ffffff;
+  }
+  
+  td {
+    font-size: 0.8rem;
+  }
+  
+  tbody tr:nth-child(even) {
+    background: rgba(254,160,47);
+  }
+  
+  footer {
+    background-color: #ffffff;
+    padding: 0;
+    text-align: center;
+    margin-top: 0px;
+    
+}
+
+footer p {
+    margin:0%;
+}
+

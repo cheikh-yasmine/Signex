@@ -49,7 +49,7 @@ export class SigninComponent {
         alert("This E-mail does Not Exists");
       }
       else if(resultData.message== "Login Success "){
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('userhome');
       }
       else {
         alert("Email or password Incorrect ");

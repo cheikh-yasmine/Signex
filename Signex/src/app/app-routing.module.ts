@@ -6,6 +6,11 @@ import { MyDocComponent } from './my-doc/my-doc.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import { AboutComponent } from './about/about.component';
+import { ProfileComponent } from './profile/profile.component';
+import { FileViewComponent } from './fileview/file-view.component';
+import { UsernavComponent } from './usernav/usernav.component';
+import { UserhomeComponent } from './userhome/userhome.component';
+import { UseraboutComponent } from './userabout/userabout.component';
 
 
 
@@ -13,10 +18,14 @@ import { AboutComponent } from './about/about.component';
 const routes: Routes = [
   {path :'signup',component:SignupComponent},
   {path :'signin',component:SigninComponent},
-  {path :'Mydocuments',component:MyDocComponent},
+  {path :'Mydocuments',component: FileViewComponent},
   {path :'home',component:HomepageComponent}, 
   {path :'uploadFile',component:UploadFileComponent}, 
   {path :'about',component:AboutComponent},
+  {path :'profile',component:ProfileComponent},
+  {path: 'usernav', component:UsernavComponent},
+  {path: 'userhome', component:UserhomeComponent},
+  {path: 'userabout', component:UseraboutComponent},
 ];
 
 @NgModule({
