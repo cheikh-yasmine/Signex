@@ -1,23 +1,4 @@
-  <!-- 
-  <body>
-      <app-usernav></app-usernav>
-    <div class="container">
-      <h1>Profile</h1>
-      <div class="profile-info">
-        <img src="./../../assets/image/pfp.png" alt="Profile Picture">
-        <div>
-          <h2>John Doe</h2>
-          <p>Software Engineer at ACME Inc.</p>
-          <p>Phone: 123-456-7890</p>
-          <p>Email: john.doe@example.com</p>
-        </div>
-      </div>
-      <div class="profile-actions">
-        <button class="but-delete">Delete Account</button>
-        <button class="btn-primary">Update Information</button>
-      </div>
-    </div>
-  </body> -->
+
   <body>
 
       <app-usernav></app-usernav>
@@ -85,8 +66,10 @@
                 <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
     
                   <img src=";/../../../assets/image/pfp.png" alt="Profile" class="rounded-circle">
-                  <h2>User Example</h2>
-                
+                  <div *ngIf="currentUser">
+                    <h2>{{currentUser.firstName}} {{currentUser.lastName}}</h2>
+                    <h3>{{currentUser.username}}</h3>
+                </div>
                 
                 </div>
               </div>
@@ -102,49 +85,39 @@
     
                     <div class="tab-pane fade show active profile-overview" id="profile-overview">
     
-                      <h5 class="card-title">Profile Details</h5>
-    
-                      <!-- <div class="row">
-                        <div class="col-lg-3 col-md-4 label ">Last Name</div>
-                        <div class="col-lg-9 col-md-8">Example</div>
-                      </div>
-    
-                      <div class="row">
-                        <div class="col-lg-3 col-md-4 label">Name</div>
-                        <div class="col-lg-9 col-md-8">User</div>
-                      </div> -->
-                      <div class="row">
-                        <div class="col-lg-3 col-md-4 label">Last Name</div>
-                        <div class="col-lg-9 col-md-8">aaa</div>
-                      </div>
+                      <div class="card-body pt-3">
+                        <h5 class="card-title">Profile Details</h5>
+                        <div class="row">
+                          <div class="col-lg-3 col-md-4 label">Last Name</div>
+                          <div class="col-lg-9 col-md-8"> {{currentUser.lastName}}</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-3 col-md-4 label">Name</div>
                       
-                      <div class="row">
-                        <div class="col-lg-3 col-md-4 label">Last Name</div>
-                        <div class="col-lg-9 col-md-8" > aaa</div>
-                      </div>
+                            <div class="col-lg-9 col-md-8  ">{{currentUser.firstName}}</div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-3 col-md-4 label">Email</div>
+                          <div class="col-lg-9 col-md-8">
+                        {{ currentUser.email }}
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-lg-3 col-md-4 label">Password</div>
+                          <div class="col-lg-9 col-md-8">*********</div>
+                        </div>
+                        </div>
                       
-                      <div class="row">
-                        <div class="col-lg-3 col-md-4 label">Name</div>
-                        <div class="col-lg-9 col-md-8" > aaa</div>
-                      </div>
+
+
+                     
                       
-                      <div class="row">
-                        <div class="col-lg-3 col-md-4 label">Email</div>
-                        <div class="col-lg-9 col-md-8" > aaa </div>
-                      </div>
                       
+                
     
-                      <!-- <div class="row">
-                        <div class="col-lg-3 col-md-4 label">Email</div>
-                        <div class="col-lg-9 col-md-8">user.example@mail.com</div>
-                      </div> -->
-    
-                      <div class="row">
-                        <div class="col-lg-3 col-md-4 label">Password</div>
-                        <div class="col-lg-9 col-md-8">*********</div>
-                      </div>
-    
-                    </div>
+                    <!-- </div> -->
     
                     <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
     

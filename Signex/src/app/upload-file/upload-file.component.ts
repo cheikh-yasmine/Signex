@@ -1,6 +1,8 @@
 
 import { Component } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { FileService } from '../file.service';
+
 
 @Component({
   selector: 'app-upload-file',
@@ -14,7 +16,7 @@ export class UploadFileComponent {
   uploadError: string | null = null;
   uploadSuccess: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private fileService: FileService) {}
   
   onFileSelected(event: any) {
     this.file = event.target.files[0];
@@ -51,5 +53,7 @@ export class UploadFileComponent {
           this.uploadSuccess = false;
         }
       });
+    
+      
   }
 }
