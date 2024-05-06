@@ -8,7 +8,6 @@ import { HeaderComponent } from './header/header.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { MyDocComponent } from './my-doc/my-doc.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadFileComponent } from './upload-file/upload-file.component';
@@ -19,6 +18,7 @@ import { UsernavComponent } from './usernav/usernav.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { UseraboutComponent } from './userabout/userabout.component';
 import { AdminComponent } from './admin/admin.component';
+import { HelppageComponent } from './helppage/helppage.component';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { AdminComponent } from './admin/admin.component';
     SignupComponent,
     SigninComponent,
     HomepageComponent,
-    MyDocComponent,
+    
 
     UploadFileComponent,
      FileViewComponent,
@@ -37,7 +37,8 @@ import { AdminComponent } from './admin/admin.component';
      UsernavComponent,
      UserhomeComponent,
      UseraboutComponent,
-     AdminComponent
+     AdminComponent,
+     HelppageComponent
   ],
   imports: [
     BrowserModule,

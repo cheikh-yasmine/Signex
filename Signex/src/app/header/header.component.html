@@ -1,12 +1,19 @@
 
    <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="home">SignEX</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse justify-content-center " id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+    <div class="collapse navbar-collapse justify-content-between " id="navbarTogglerDemo02">
+     <div> <a href="home" class="logo d-flex align-items-center">
+        <img src="./../../assets/image/signex logo.png">
+        <span class="d-none d-lg-block">SignEX</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div>
+
+      <ul class="navbar-nav  mt-2 mt-lg-0 ms-5 ps-5">
         <li class="nav-item active">
           <a class="nav-link" href="home">Home</a>
         </li>&nbsp; &nbsp; &nbsp;
@@ -15,8 +22,13 @@
         </li>&nbsp; &nbsp; &nbsp;
           <li class="nav-item">
             <a class="nav-link" href="signin">Documents</a>
-          </li>&nbsp; &nbsp; &nbsp;
-          
+          </li>  
+
       </ul>
     </div>
+      <div class="col-md-3 text-end">
+        <button type="button" class="btn btn-outline-primary" (click)="gotosignin()" >Login</button>
+      </div>
+     </div>
+     
   </nav>

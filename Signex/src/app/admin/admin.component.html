@@ -1,12 +1,12 @@
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
 <body>
     <header id="header" class="header fixed-top d-flex align-items-center">
-      <div class="d-flex align-items-center justify-content-between">
-        <a href="accueil" class="logo d-flex align-items-center">
+      <a href="accueil" class="logo d-flex align-items-center">
           <img src="./../../assets/image/signex logo.png">
           <span class="d-none d-lg-block">SignEX</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
-      </div>
+      
       <div class="search-bar">
         <form class="search-form d-flex align-items-center" method="POST" action="#">
           <input type="text" name="query" placeholder="Search user" title="Enter search keyword">
@@ -66,7 +66,7 @@
           </li>
         <li class="nav-item">
           <a class="nav-link collapsed" href="home">
-            <span>Logout</span>
+            <span (click)="logout()">Logout</span>
           </a>
         </li>
   
@@ -86,18 +86,18 @@
       <tr>
 
         <th scope="col">ID</th>
-        <th scope="col">Nom</th>
-        <th scope="col">Prenom</th>
-        <th scope="col">Pseudo</th>
+        <th scope="col">Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Username</th>
         <th scope="col">Email</th>
-        <th scope="col">Mot De Passe</th>
+        <th scope="col">Password</th>
         <th scope="col">Date</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
 
-      <!-- <tr *ngFor="let user of users">
+     <tr *ngFor="let user of users">
         <td>{{user.id}}</td>
         <td>{{user.firstName}}</td>
         <td>{{user.lastName}}</td>
@@ -105,17 +105,17 @@
         <td>{{user.email}}</td>
         <td>{{user.password}}</td>
         <td>{{user.creationDate}}</td>
-        <td><button class="btn btn-warning text-light" >Modifier</button>&nbsp; &nbsp;
-          <button class="btn btn-danger text-light" >Supprimer</button>
+        <td><button class="btn btn-warning text-light" (click)="updateUser(user.id)" >Update</button>&nbsp; &nbsp;
+          <button class="btn btn-danger text-light" (click)="confirmDelete(user)">Delete</button>
         </td>
-      </tr> -->
+      </tr> 
     </tbody>
   </table>
   <a href="signup"><button class="btn btn-info text-light text-center ">Ajouter</button> </a>
       
 </section>
     </main>
-  
+  </body>
     <div class="modal fade" id="deleteModal">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -127,11 +127,12 @@
       
             </div>
             <div class="modal-footer">
-      <button class="btn btn-secondary" >No</button>
-      <button class="btn btn-danger"  >Yes</button>     
+      <button class="btn btn-secondary" (click)="closeDelete()">No</button>
+      <button class="btn btn-danger" (click)="deleteUser()" >Yes</button>     
       </div>    
           </div>
       
         </div>
       </div>
-  </body>
+ 
+  

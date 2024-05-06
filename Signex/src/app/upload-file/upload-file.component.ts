@@ -1,7 +1,10 @@
 
 import { Component } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { FileService } from '../file.service';
+import { AuthenticationService } from '../authentication.service';
+import { Router } from '@angular/router';
+declare var $:any;
 
 
 @Component({
@@ -15,8 +18,8 @@ export class UploadFileComponent {
   description: string = '';
   uploadError: string | null = null;
   uploadSuccess: boolean = false;
-
-  constructor(private http: HttpClient, private fileService: FileService) {}
+ 
+  constructor(private http: HttpClient, private fileService: FileService ,private authenticationService : AuthenticationService, private router: Router) {}
   
   onFileSelected(event: any) {
     this.file = event.target.files[0];
@@ -27,19 +30,20 @@ export class UploadFileComponent {
   uploadFile() {
     if (!this.file) {
       this.uploadError = 'Please select a file to upload.';
-      return;
+      return; // Exit the function if no file is selected
     }
-
+  
     if (!this.ownedBy || !this.description) {
       this.uploadError = 'Please fill in all required fields.';
-      return;
+      return; // Exit the function if required fields are empty
     }
 
     const formData = new FormData();
     formData.append('ownedBy', this.ownedBy);
     formData.append('description', this.description);
     formData.append('file', this.file, this.file.name);
-
+   
+    
 
 
     this.http.post('http://localhost:8080/api/files', formData)
@@ -47,6 +51,7 @@ export class UploadFileComponent {
         next: (response) => {
           this.uploadSuccess = true;
           this.uploadError = null; // Clear any previous errors
+         
         },
         error: (error: HttpErrorResponse) => {
           this.uploadError = 'An error occurred during upload: ' + error.message;
@@ -56,4 +61,9 @@ export class UploadFileComponent {
     
       
   }
+
+  goToSuccessPage() {
+    this.router.navigate(['/Mydocuments']); 
+  }
+  
 }

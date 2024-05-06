@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
     companyName: "",
     phone: "",
     creationDate: new Date() ,
-   
+    accessToken: "",
   }
   
  
@@ -92,7 +92,7 @@ export class SignupComponent implements OnInit {
         console.error('Error registering user:', error);
         alert('An error occurred. Please try again .');
       });
-  }
+    } 
 
     
     onPhoneKeyPress(event: KeyboardEvent) {

@@ -1,6 +1,6 @@
 nav{
     padding-left: 50px;
-    padding-right: 50px;
+    padding-right: 110px;
     font-size: 20px;
     font-weight: bold;
 }
@@ -65,4 +65,25 @@ nav{
   .rounded-circle{
     width: 30px;
     height: 30px;
+  }
+  .logo {
+    line-height: 1;
+  }
+  
+  @media (min-width: 120px) {
+    .logo {
+      width: 0px;
+    }
+  }
+  
+  .logo img {
+    max-height: 40px;
+    margin-right: 6px;
+  }
+  
+  .logo span {
+    font-size: 25px;
+    font-weight: 700;
+    color: #003f5a;
+    font-family: "Nunito", sans-serif;  
   }

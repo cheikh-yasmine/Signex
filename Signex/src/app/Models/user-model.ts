@@ -9,5 +9,6 @@ export interface User
     companyName: string;
     phone:string;  
     creationDate: Date;
+    accessToken: String;
 
 }

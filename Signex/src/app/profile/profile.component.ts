@@ -55,6 +55,14 @@ export class ProfileComponent implements OnInit {
       console.error('Error fetching user:', error);
     });
   }
+  logout(){
+    localStorage.removeItem("user");
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("accessToken");
+    window.location.reload();
+  }
+
 
 }
 
