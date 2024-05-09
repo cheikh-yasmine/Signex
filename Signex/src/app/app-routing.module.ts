@@ -13,6 +13,7 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { UseraboutComponent } from './userabout/userabout.component';
 import { AdminComponent } from './admin/admin.component';
 import { HelppageComponent } from './helppage/helppage.component';
+import { MailComponent } from './mail/mail.component';
 
 
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'userabout', component:UseraboutComponent},
   {path: 'admin', component:AdminComponent},
   {path: 'help', component:HelppageComponent},
+  {path: 'mail', component:MailComponent},
 ];
 
 @NgModule({

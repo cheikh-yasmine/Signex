@@ -6,6 +6,13 @@
       "changeOrigin": true,
       "pathRewrite": { "^/api": "" }
     }
+    
+      ,"/maill/send": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": { "^/mail/send": "" }
+      }
   
   
   }

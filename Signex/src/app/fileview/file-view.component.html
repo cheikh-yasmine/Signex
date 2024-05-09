@@ -1,7 +1,7 @@
 
-
+<app-usernav></app-usernav>
            <body>
-             <app-usernav></app-usernav>
+             
             <aside id="sidebar" class="sidebar">
               
                 <ul class="sidebar-nav" id="sidebar-nav">
@@ -54,12 +54,10 @@
                           <tr>
                     
                             <th scope="col"></th>
-                            <th scope="col">owner</th>
-                            <th scope="col">File Name</th>
-                            <th scope="col">description </th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Password</th>
-                            <th scope="col">Status</th>
+                            <th scope="col">File Description</th>
+                            <th scope="col">File</th>
+                            <th scope="col">File Name </th>
+                            <th scope="col">File Type</th>
                             
                           </tr>
                           
@@ -69,13 +67,10 @@
                     
                                 <tr >
                                    <td></td>
-                                   <td>aa</td>
-                                   <td>aa</td>
-                                   <td>aa</td>
-                                   <td>a</td>
-                                   <td></td>
-                                   <td></td>
-                                
+                                   <td>{{files.Description}}</td>
+                                   <td>{{files.Name}}</td>
+                                   <td>{{files.Type}}</td>
+                                 
                                  </tr> 
                                </tbody>
         

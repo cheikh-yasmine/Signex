@@ -19,6 +19,7 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { UseraboutComponent } from './userabout/userabout.component';
 import { AdminComponent } from './admin/admin.component';
 import { HelppageComponent } from './helppage/helppage.component';
+import { MailComponent } from './mail/mail.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { HelppageComponent } from './helppage/helppage.component';
      UserhomeComponent,
      UseraboutComponent,
      AdminComponent,
-     HelppageComponent
+     HelppageComponent,
+     MailComponent
   ],
   imports: [
     BrowserModule,

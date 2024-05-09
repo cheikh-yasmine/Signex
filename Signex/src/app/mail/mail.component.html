@@ -1,0 +1,16 @@
+
+<body>
+    <app-usernav></app-usernav>
+  <main>
+    <div class="container mt-3 card">
+        <h3 class="titre-card">Send Document</h3>
+        <form (ngSubmit)="onSubmit()">
+       <input type="email" name="to" [(ngModel)]="recipient" placeholder="Recipient Email">
+       <input type="text" name="subject" [(ngModel)]="subject" placeholder="Subject">
+         <textarea name="body" [(ngModel)]="body" placeholder="Email Body"></textarea>
+        <input type="file" (change)="onFileSelected($event)">
+          <button type="submit">Send Email</button>
+        </form>
+    </div> 
+  </main>
+</body>

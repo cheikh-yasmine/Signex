@@ -14,7 +14,7 @@ declare var $:any;
 })
 export class UploadFileComponent {
   file: File | null = null;
-  ownedBy: string = '';
+ 
   description: string = '';
   uploadError: string | null = null;
   uploadSuccess: boolean = false;
@@ -33,13 +33,10 @@ export class UploadFileComponent {
       return; // Exit the function if no file is selected
     }
   
-    if (!this.ownedBy || !this.description) {
-      this.uploadError = 'Please fill in all required fields.';
-      return; // Exit the function if required fields are empty
-    }
+    
 
     const formData = new FormData();
-    formData.append('ownedBy', this.ownedBy);
+   
     formData.append('description', this.description);
     formData.append('file', this.file, this.file.name);
    
