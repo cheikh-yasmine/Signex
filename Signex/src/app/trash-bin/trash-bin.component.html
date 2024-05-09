@@ -7,7 +7,7 @@
                 <ul class="sidebar-nav" id="sidebar-nav">
           
                     <li class="nav-item">
-                        <a class="nav-link" href="Mydocuments">
+                        <a class="nav-link collapsed" href="Mydocuments">
                          <i class="fa-solid fa-folder-open"></i>
                           <span>My documents</span>
                         </a>
@@ -25,7 +25,7 @@
                           </a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link collapsed" href="trash">
+                          <a class="nav-link " href="trash">
                            <i class="fa-solid fa-trash"></i>   
                             <span>Trash bin </span>
                           </a>
@@ -66,13 +66,14 @@
                         <tbody>
                             <tbody>
                     
-                              <tr *ngFor="let file of files">
+                              <tr >
                                    <td></td>
-                                   <td>{{file.description}}</td>
-                                   <td>{{file.name}}</td>
-                                   <td>{{file.type}}</td>
-                                   <td><button class="btn btn-warning text-light send-button"  ><i class="fa-regular fa-paper-plane"></i></button>&nbsp; &nbsp;
-                                    <button class="btn btn-warning text-light  delete-button" click="deleteFile(file)" ><i class="fa-solid fa-trash-can"></i></button>&nbsp; &nbsp;
+                                   <td>This is a business contract</td>
+                                   <td>Business Contract Company123.pdf</td>
+                                   <td>application/pdf</td>
+                                   <td>
+                                    <button class="btn btn-warning text-light  delete-button"  ><i class="fa-solid fa-trash-can"></i></button>&nbsp; &nbsp;
                                  </tr> 
                                </tbody>
         
+

@@ -20,6 +20,7 @@ import { UseraboutComponent } from './userabout/userabout.component';
 import { AdminComponent } from './admin/admin.component';
 import { HelppageComponent } from './helppage/helppage.component';
 import { MailComponent } from './mail/mail.component';
+import { TrashBinComponent } from './trash-bin/trash-bin.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { MailComponent } from './mail/mail.component';
      UseraboutComponent,
      AdminComponent,
      HelppageComponent,
-     MailComponent
+     MailComponent,
+     TrashBinComponent
   ],
   imports: [
     BrowserModule,
