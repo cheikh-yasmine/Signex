@@ -16,13 +16,15 @@ export class FileService {
 
   constructor(private http: HttpClient) { }
 
-  getAllFiles(): Observable<FileUploadEntity[]> {
-    return this.http.get<FileUploadEntity[]>(this.baseUrl+"/getAllFiles" );
+  // getAllFiles(): Observable<FileUploadEntity[]> {
+  //   return this.http.get<FileUploadEntity[]>(this.baseUrl+"/getAllFiles" );
   
+  // }
+  getAllFiles(): Observable<FileUploadEntity[]> {
+    return this.http.get<FileUploadEntity[]>(`${this.baseUrl}/getAllFiles`);
   }
-
-  deleteFile(fileId: number): Observable<any> { // "any" for flexibility (adjust if backend returns specific data)
-    return this.http.delete<any>(`${this.baseUrl}/delete/${fileId}`);
+  deleteFile(fileId: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/delete/${fileId}`);
   }
 }
 
