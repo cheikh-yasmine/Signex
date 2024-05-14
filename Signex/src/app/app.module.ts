@@ -21,7 +21,8 @@ import { AdminComponent } from './admin/admin.component';
 import { HelppageComponent } from './helppage/helppage.component';
 import { MailComponent } from './mail/mail.component';
 import { TrashBinComponent } from './trash-bin/trash-bin.component';
-
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 @NgModule({
   declarations: [
@@ -46,9 +47,10 @@ import { TrashBinComponent } from './trash-bin/trash-bin.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,ReactiveFormsModule,HttpClientModule,
+    AppRoutingModule,FormsModule,ReactiveFormsModule,HttpClientModule, PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+platformBrowserDynamic().bootstrapModule(AppModule);

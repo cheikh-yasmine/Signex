@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 import { UserService } from '../user.service';
 import { User } from '../Models/user-model';
+import Swal from 'sweetalert2'
 
 
 
@@ -87,6 +88,21 @@ export class SignupComponent implements OnInit {
     this.userService.register(this.user)
       .subscribe(newUser => {
         console.log('User registered successfully:', newUser);
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          }
+        });
+        Toast.fire({
+          icon: "success",
+          title: "user registered successfully"
+        });
         this.router.navigate(['signin']);
       }, error => {
         console.error('Error registering user:', error);

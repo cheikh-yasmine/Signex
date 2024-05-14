@@ -333,7 +333,7 @@ a:hover {
   .send-button::after {
    
     color: #fff;
-    
+  
     text-align: center;
     line-height: normal; 
     position: absolute; 
@@ -345,3 +345,12 @@ a:hover {
   .send-button:hover {
     animation: button-puff 0.7s ease-in-out;
   }
+  .refresh{
+    position: absolute;
+    margin-left: 350px;
+    border: 1px solid #ddd;
+    background-color: #036691; 
+    border-radius: 30px;
+    font-size: 13px;
+  }
+  

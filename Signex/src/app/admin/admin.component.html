@@ -90,7 +90,7 @@
         <th scope="col">Last Name</th>
         <th scope="col">Username</th>
         <th scope="col">Email</th>
-        <th scope="col">Password</th>
+        <!-- <th scope="col">Password</th> -->
         <th scope="col">Date</th>
         <th scope="col">Action</th>
       </tr>
@@ -103,10 +103,10 @@
         <td>{{user.lastName}}</td>
         <td>{{user.username}}</td>
         <td>{{user.email}}</td>
-        <td>{{user.password}}</td>
+        <!-- <td>{{user.password}}</td> -->
         <td>{{user.creationDate}}</td>
         <td><button class="btn btn-warning text-light" (click)="updateUser(user.id)" >Update</button>&nbsp; &nbsp;
-          <button class="btn btn-danger text-light" (click)="confirmDelete(user)">Delete</button>
+          <button class="btn btn-danger text-light" (click)="deleteUser()">Delete</button>
         </td>
       </tr> 
     </tbody>
@@ -116,23 +116,6 @@
 </section>
     </main>
   </body>
-    <div class="modal fade" id="deleteModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Confirmation</h5>
-            </div>
-            <div class="modal-body">
-              <p>Êtes-vous sûr de vouloir supprimer cet utilisateur ?</p>
-      
-            </div>
-            <div class="modal-footer">
-      <button class="btn btn-secondary" (click)="closeDelete()">No</button>
-      <button class="btn btn-danger" (click)="deleteUser()" >Yes</button>     
-      </div>    
-          </div>
-      
-        </div>
-      </div>
+    
  
   

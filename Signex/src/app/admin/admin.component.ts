@@ -3,6 +3,7 @@ import { User } from '../Models/user-model';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 declare var $:any;
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -37,32 +38,43 @@ export class AdminComponent implements OnInit{
     });
   }
   UserToDelete!:User;
-  confirmDelete(user:User)
-  {
+  
 
-  $('#deleteModal').modal('show');
-  this.UserToDelete=user;
-
-
-  }
-  closeDelete()
-  {
-    $('#deleteModal').modal('hide');
-    window.location.reload();
-
-  }
+  
 
   deleteUser()
   {
-    this.userService.deleteUser(this.UserToDelete.username)
-    .subscribe(() =>{
-      console.log("deleted")
-      $('#deleteModal').modal('hide');
-      window.location.reload();
+    Swal.fire({
+      title: "Are you sure you want to delete this user?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes"
+    }).then((result) => {
+      if (result.isConfirmed) {
+       
+        Swal.fire({
+          title: "Deleted!",
+          text: "This user has been deleted.",
+          icon: "success"
+        });
+      }
+    });
+    // this.userService.deleteUser(this.UserToDelete.username)
+    // .subscribe(() =>{
+    //   console.log("deleted")
+     
+    //   window.location.reload();
 
-    })
+    // })
 
   }
+
+
+
+
   updateUser(id :number)
   {
   this.router.navigate(["/update",id])

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthResponseDTO } from './auth-response.dto';
 import { UserService } from '../user.service';
 import { error } from 'jquery';
+import Swal from 'sweetalert2'
 
 
 @Component({
@@ -55,31 +56,70 @@ password:String="";
     this.router.navigate(['signup']);
   }
 
+ showVerificationPopup() {
+    Swal.fire({
+      title: "Enter Verification Code",
+      input: "text",
+      inputLabel: "Verification Code",
+      inputPlaceholder: "Enter the code sent to your email",
+      showCancelButton: true,
+      confirmButtonColor: "#003f5a",
+      cancelButtonColor: "#e86d1b",
+      confirmButtonText: "Verify"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const enteredCode = result.value; 
+  
+     
+        const isCodeValid = enteredCode === "123456"; // Replace with actual verification logic
+  
+        if (isCodeValid) {
+          const loginData = {
+            username: this.username,
+            password: this.password
+          };
+        this.userService.login(loginData)
+          .subscribe(user => {
+            if (user) {
+              console.log('Login successful');
+      
+              if (this.username == 'admin' && this.password == 'admin') {  
+                this.router.navigate(['/admin']);
+              } else {
+                this.router.navigate(['/userhome']); 
+               
+              }
+      
+              localStorage.setItem('accessToken', JSON.stringify(user)); 
+              localStorage.setItem('isLoggedIn', 'true');
+            } else {
+              console.log('Invalid username or password');
+            }
+          }, error => {
+            console.error('Error occurred during login:', error);
+          });
+          Swal.fire({
+            
+            title: "Verification successful!",
+            icon: "success"
 
-  login(): void {
-    const loginData = {
-      username: this.username,
-      password: this.password
-    };
-  this.userService.login(loginData)
-    .subscribe(user => {
-      if (user) {
-        console.log('Login successful');
-
-        if (this.username == 'admin' && this.password == 'admin') {  
-          this.router.navigate(['/admin']);
+          });
         } else {
-          this.router.navigate(['/userhome']); 
+          Swal.fire({
+            title: "Error",
+            text: "Invalid verification code.",
+            icon: "error"
+          });
         }
-
-        localStorage.setItem('accessToken', JSON.stringify(user)); 
-        localStorage.setItem('isLoggedIn', 'true');
-      } else {
-        console.log('Invalid username or password');
       }
-    }, error => {
-      console.error('Error occurred during login:', error);
     });
+  }
+  
+
+  
+  login(): void {
+    
+   
 }
 
 
