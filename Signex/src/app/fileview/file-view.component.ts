@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FileService } from '../file.service';
 import { FileUploadEntity } from '../Models/FileUploadEntity';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-file-view',
   templateUrl: './file-view.component.html',
@@ -10,7 +11,7 @@ import Swal from 'sweetalert2'
 export class FileViewComponent implements OnInit {
   files: FileUploadEntity[] = []; 
 
-  constructor(private fileService: FileService) { }
+  constructor(private fileService: FileService , private router : Router) { }
 
   ngOnInit() {
     this.getFiles(); 
@@ -74,6 +75,8 @@ refresh(){
   window.location.reload();
 }
  
- 
+ gotosend(){
+  this.router.navigate(['mail']);
+ }
   
   }

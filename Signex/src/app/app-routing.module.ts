@@ -15,6 +15,7 @@ import { AdminComponent } from './admin/admin.component';
 import { HelppageComponent } from './helppage/helppage.component';
 import { MailComponent } from './mail/mail.component';
 import { TrashBinComponent } from './trash-bin/trash-bin.component';
+import { VisitorCodeComponent } from './visitor-code/visitor-code.component';
 
 
 
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'help', component:HelppageComponent},
   {path: 'mail', component:MailComponent},
   {path: 'trash', component: TrashBinComponent},
+  {path: 'verification' , component: VisitorCodeComponent},
 ];
 
 @NgModule({
