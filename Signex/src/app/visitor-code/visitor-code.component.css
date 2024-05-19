@@ -4,7 +4,7 @@
     min-height: 100vh; 
     width: 100%;
     padding: 51px;
-    background: linear-gradient( rgb(255, 255, 255),rgb(249, 249, 249));
+    background: linear-gradient( rgb(240, 196, 130),rgb(251, 200, 124));
     background-size: cover;
     background-repeat: no-repeat;
     position: relative; 
@@ -13,8 +13,8 @@
   }
   
   .form-box {
-    border-radius: 40px;
-    background: linear-gradient(180deg, rgb(254,160,47,0.6), rgba(254,160,47,0.6));
+    border-radius: 0px;
+    background: linear-gradient(180deg,rgba(0,63,90, 0.8), rgba(0,63,90, 0.8));
     box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(30px);
     width: 560px;
@@ -22,51 +22,19 @@
     display: flex;
     flex-direction: column; 
     align-items: center; 
-    margin-left: 320px; 
+    margin-left:360px; 
+    margin-top: 180px;
+    border-radius: 10px;
+    color: aliceblue;
   }
   
-  .button-box {
-    text-align: center;
-    font-size: var(--font-size-xl);
-    line-height: 26px;
-    text-transform: capitalize;
-    font-weight: 600;
-    color: white;
-    margin-top: 41px;
-    display: flex;
-    border: 2px solid #003f5a;
-    border-radius: 40px;
-    
-  }
+
   
   .formu {
     margin: 41px 0;
   }
   
-  .toggle-btn1{
-    padding: 10px 40px; 
-    margin: 0 ;
-    background-color:#003f5a;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 40px 0 0 40px;
-
-
-  }
-
-  .toggle-btn2 {
-    padding: 10px 40px; 
-    margin: 0;
-    background-color: white;
-    border: #003f5a;
-    color: #003f5a;
-    cursor: pointer;
-    border-radius: 0 40px 40px 0;
-
-  }
+ 
 
   
   .formu input[type="text"],
@@ -82,8 +50,7 @@
     text-align: left;
     box-shadow: 2px 2px 2px rgba(70, 69, 69, 0.2);
   }
-  
-  .sumbmit-btn {
+   /* .sumbmit-btn {
     border: 0;
     background: #003f5a;
     color: white;
@@ -96,6 +63,7 @@
     margin-top: 30px;
 
   }
+  */
   
   input::placeholder {
     text-align: left;
@@ -112,4 +80,50 @@
 .warning-div{
   margin: 5px 0 5px 0;
   color: #660909;
+}
+
+
+/* CSS */
+.sumbmit-btn{
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid rgb(255, 255, 255);
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  align-items: center; 
+  margin-top: 30px;
+  margin-left: 150px;
+  color: white;
+  border-radius: 10px;
+}
+
+.sumbmit-btn:after {
+  content: "";
+  background-color: #e59845;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+  border-radius: 10px;
+}
+
+.sumbmit-btn:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .sumbmit-btn {
+    padding: 13px 50px 13px;
+  }
 }

@@ -25,6 +25,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { VisitorCodeComponent } from './visitor-code/visitor-code.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

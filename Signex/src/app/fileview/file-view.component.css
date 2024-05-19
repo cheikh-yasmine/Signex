@@ -250,101 +250,7 @@ a:hover {
   } */
 
 
-  .delete-button {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: 1px solid #ddd;
-    background-color: #f7931b; /* Orange color */
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    position: relative; /* Required for animations */
-  }
-  
-  .delete-button::after {
-    
-    color: #fff;
-    font-weight: bold;
-    text-align: center;
-    line-height: normal; /* Maintain vertical centering */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center text within button */
-  }
-  
-  .delete-button:hover,
-  .delete-button:active {
-    animation: button-impressive 0.5s ease-in-out;
-  }
-  
-  @keyframes button-impressive {
-    0% {
-      transform: scale(1, 1) rotate(0deg);
-      background-color: #f7931b;
-    }
-    25% {
-      transform: scale(1.2, 0.8) rotate(5deg);
-      background-color: #f0780e;
-    }
-    50% {
-      transform: scale(0.8, 1.2) rotate(-5deg);
-      background-color: #e85d00;
-    }
-    75% {
-      transform: scale(1.1, 0.9) rotate(3deg);
-      background-color: #f0780e;
-    }
-    100% {
-      transform: scale(1, 1) rotate(0deg);
-      background-color: #f7931b;
-    }
-  }
-  
-  /* Optional: Seed stitch effect (unchanged) */
-  .delete-button::before {
-   
-    display: block;
-    position: absolute;
-    top: 20%;
-    left: 30%;
-    width: 2px;
-    height: 2px;
-    background-color: #fff;
-    border-radius: 20px;
-  }
-  
-  .delete-button::before + .delete-button::before {
-    top: 60%;
-    left: 60%;
-  }
-  
-  .send-button {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: 1px solid #ddd;
-    background-color: #036691; 
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    position: relative; 
-  }
-  
-  .send-button::after {
-   
-    color: #fff;
-  
-    text-align: center;
-    line-height: normal; 
-    position: absolute; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .send-button:hover {
-    animation: button-puff 0.7s ease-in-out;
-  }
+ 
   .refresh{
     position: absolute;
     margin-left: 350px;
@@ -354,3 +260,109 @@ a:hover {
     font-size: 13px;
   }
   
+ 
+/* CSS */
+.sign-button {
+  background-color: #00264D;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.sign-button:hover {
+  background-color: #036691;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .sign-button {
+    font-size: 1.125rem;
+    /* padding: 1rem 2rem; */
+  }
+}
+
+/* CSS */
+.send-button {
+  background-color: #036691;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.send-button:hover {
+  background-color: #00264D;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .send-button {
+    font-size: 1.125rem;
+    /* padding: 1rem 2rem; */
+  }
+}
+.delete-button {
+  background-color: #e86d1b;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  
+  font-weight: 600;
+  line-height: 1;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.delete-button:hover {
+  background-color: #f1a834;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .delete-button {
+    font-size: 1.125rem;
+    /* padding: 1rem 2rem; */
+  }
+}
