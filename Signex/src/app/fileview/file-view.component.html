@@ -55,7 +55,7 @@
                           <tr>
                     
                             <th scope="col"></th>
-                            <th scope="col">&nbsp; &nbsp; </th>
+                            
                             <th scope="col">File Description</th>
                             <th scope="col">File name</th>
                             <th scope="col">File Type </th>
@@ -70,16 +70,16 @@
                     
                               <tr *ngFor="let file of files">
                                    <td></td>
-                                   <td><input type="checkbox" [(ngModel)]="selectedFiles[file.fileId]"></td>
+                                  
                                    <td>{{file.description}}</td>
                                    <td>{{file.name}}</td>
                                    <td>{{file.type}}</td>
                                   
                                    <td>
-                                    <button class="btn btn-warning text-light sign-button"  (click)="viewPDF(file)" ><i class="fa-solid fa-signature"></i></button>&nbsp; &nbsp;
+                                   <button class="btn btn-warning text-light sign-button" (click)="openpdf()"><i class="fa-solid fa-signature"></i></button>&nbsp; &nbsp;
                                     <button class="btn btn-warning text-light send-button"  (click)="gotosend()" ><i class="fa-regular fa-paper-plane"></i></button>&nbsp; &nbsp;
                                     <button class="btn btn-warning text-light  delete-button" (click)="deleteFile(file)" ><i class="fa-solid fa-trash-can"></i></button>
                                   </tr> 
-                                  <pdf-viewer *ngIf="pdfSrc" [src]="pdfSrc"> </pdf-viewer>
+                               
                                </tbody>
         

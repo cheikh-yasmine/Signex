@@ -1,0 +1,10 @@
+.contrat{
+
+  width: 900px;
+  justify-content: center;
+  margin-left: 220px;
+  box-shadow: 5px;
+}
+body{
+background-color: rgb(60, 59, 59);
+}

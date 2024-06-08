@@ -24,8 +24,10 @@ import { TrashBinComponent } from './trash-bin/trash-bin.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { VisitorCodeComponent } from './visitor-code/visitor-code.component';
-
-
+import { PdfComponent } from './pdf/pdf.component';
+import { environnement } from 'src/environnements/environnement';
+import {initializeApp} from  'firebase/app';
+initializeApp(environnement.firebase);
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,8 @@ import { VisitorCodeComponent } from './visitor-code/visitor-code.component';
      HelppageComponent,
      MailComponent,
      TrashBinComponent,
-     VisitorCodeComponent
+     VisitorCodeComponent,
+     PdfComponent
   ],
   imports: [
     BrowserModule,

@@ -60,8 +60,8 @@ password:String="";
     Swal.fire({
       title: "Enter Verification Code",
       input: "text",
-      inputLabel: "Verification Code",
-      inputPlaceholder: "Enter the code sent to your email",
+      inputLabel: "Enter the code sent to your email",
+      inputPlaceholder: "Verification code",
       showCancelButton: true,
       confirmButtonColor: "#003f5a",
       cancelButtonColor: "#e86d1b",
