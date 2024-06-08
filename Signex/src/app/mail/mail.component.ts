@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { EmailService } from '../email.service';
-
+import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-mail',
   templateUrl: './mail.component.html',
@@ -10,38 +11,34 @@ export class MailComponent {
   recipient: string = '';
     subject: string = '';
     body: string = '';
-    attachment: File | null = null;
+ 
+    codecreation: boolean = false;
 
-    constructor(private emailService: EmailService) { }
+    constructor(private emailService: EmailService , private router : Router) { }
 
-    onSubmit() {
-        const formData = new FormData();
-        formData.append('to', this.recipient);
-        formData.append('subject', this.subject);
-        formData.append('body', this.body);
-        if (this.attachment) {
-            formData.append('file', this.attachment);
-        }
-
-        this.emailService.sendMail(formData)
-  .subscribe(response => {
-    console.log('Email sent!', response);
-    // Handle successful response (e.g., show success message)
-  }, error => {
-    if (error.status) { // Check for status code
-      console.error('Error sending email (status code:', error.status, '):', error.error);
-      // Handle specific error based on status and error message
-    } else {
-      console.error('Network error:', error);
-      // Handle network errors
-    }
-  });
-
+   thecode (){
     
-    }
+    this.codecreation= true;
+   }
 
-    onFileSelected(event: any) {
-        this.attachment = event.target.files[0];
-    }
+   emailsent(){
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+    Toast.fire({
+      icon: "success",
+      title: "E-mail sent successfully"
+    });
+   this.router.navigate(['/Mydocuments']);
+   }
+ 
 }
 

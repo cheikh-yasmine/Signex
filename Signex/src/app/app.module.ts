@@ -27,6 +27,12 @@ import { VisitorCodeComponent } from './visitor-code/visitor-code.component';
 import { PdfComponent } from './pdf/pdf.component';
 import { environnement } from 'src/environnements/environnement';
 import {initializeApp} from  'firebase/app';
+import { UploadchoiceComponent } from './uploadchoice/uploadchoice.component';
+import { UpandsignComponent } from './upandsign/upandsign.component';
+import { ARDComponent } from './ard/ard.component';
+import { SignComponent } from './sign/sign.component';
+import { RefuseComponent } from './refuse/refuse.component';
+import { SentComponent } from './sent/sent.component';
 initializeApp(environnement.firebase);
 @NgModule({
   declarations: [
@@ -49,7 +55,13 @@ initializeApp(environnement.firebase);
      MailComponent,
      TrashBinComponent,
      VisitorCodeComponent,
-     PdfComponent
+     PdfComponent,
+     UploadchoiceComponent,
+     UpandsignComponent,
+     ARDComponent,
+     SignComponent,
+     RefuseComponent,
+     SentComponent
   ],
   imports: [
     BrowserModule,

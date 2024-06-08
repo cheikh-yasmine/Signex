@@ -1,0 +1,26 @@
+
+<body>
+  <a href="ard">
+    <img class="back" src="./../../assets/image/back.png" > 
+</a>
+  <main>
+    <div class="container mt-3 card">
+        <h3 class="titre-card">Sign Document</h3>
+        <form >
+          <label for="signature">signature</label>
+       <input type="text" name="signature"  placeholder="enter your signature">
+       <label for="signature">Do you have any remarks concerning the document ? </label>
+         <textarea name="body"  placeholder="enter text"></textarea>
+   
+         <button type="submit" (click)="signed()">Sign</button>
+         <br>
+         <div *ngIf="signeddoc" class="alert alert-success" role="alert">
+           Would you like to download the signed document ? 
+           &nbsp; &nbsp; &nbsp;   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   &nbsp; &nbsp; &nbsp;
+      <button class="button-81"> <i class="fa-solid fa-file-arrow-down"></i></button>
+         </div>
+
+       </form>
+   </div> 
+  </main>
+</body>

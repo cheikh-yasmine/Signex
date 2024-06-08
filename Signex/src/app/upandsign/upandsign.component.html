@@ -1,0 +1,103 @@
+
+
+<app-usernav></app-usernav>
+<body>
+<aside id="sidebar" class="sidebar">
+  
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="Mydocuments">
+         <i class="fa-solid fa-folder-open"></i>
+          <span>My documents</span>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link " href="choice">
+            <i class="fa-solid fa-pen"></i>
+          <span>Upload new</span>
+        </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed " href="">
+           <i class="fa-solid fa-paper-plane"></i>   
+            <span>Sent</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="trash">
+           <i class="fa-solid fa-trash"></i>   
+            <span>Trash bin </span>
+          </a>
+        </li>
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="">
+           <i class="fa-solid fa-ban"></i> 
+            <span>Refused</span>
+          </a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="">
+         <i class="fa-solid fa-check"></i>
+          <span >Accepted</span>
+        </a>
+      </li>
+  <br>
+    </ul>
+
+  </aside>
+  <main id="main" class="main">
+    <section class="section">
+ 
+     <div class="container mt-3 card">
+       <h3 class="titre-card">Upload and Sign Document</h3>
+       <form (ngSubmit)="uploadFile()" enctype="multipart/form-data">
+         <div class="form-group mb-3">
+           <label for="ownedBy" class="form-label">Owned By:</label>
+          
+             <h5 class="owner">y.c.yass@gmail</h5>
+             
+        
+         </div>
+
+         <div class="form-group mb-3">
+           <label for="description" class="form-label">Description:</label>
+           <textarea
+             id="description"
+             class="form-control"
+             [(ngModel)]="description"
+             [ngModelOptions]="{standalone: true}"
+             required
+           ></textarea>
+         </div>
+         <div class="form-group mb-3">
+            <label for="description" class="form-label">Enter your signature:</label>
+            <br>
+            <textarea ></textarea>
+          </div>
+         <div class="form-group mb-3">
+           <label for="fileInput" class="form-label">Select File:</label>
+           <input
+             type="file"
+             id="fileInput"
+             class="form-control"
+             (change)="onFileSelected($event)"
+           />
+         </div>
+     
+         <button type="submit" class="btn btn-primary uploadbtn">Upload File</button>
+   
+       </form>
+       &nbsp; &nbsp; &nbsp;
+       <div *ngIf="uploadError" class="alert alert-danger " role="alert">
+           {{ uploadError }}
+         </div>
+       
+         <div *ngIf="uploadSuccess" class="alert alert-success" role="alert">
+           File uploaded successfully!
+           <button type="button" class="btn btn-sm btn-outline-success " (click)="goToSuccessPage()">
+             Go to my documents
+           </button>
+         </div>
+     </div>
+   

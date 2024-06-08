@@ -31,7 +31,7 @@ export class VisitorCodeComponent {
        
  
       });
-      this.router.navigate(['pdf']);
+      this.router.navigate(['ard']);
     } else {
       Swal.fire({
         title: "Error",
@@ -41,4 +41,7 @@ export class VisitorCodeComponent {
     }
   }
 });
-}}
+}
+
+
+}

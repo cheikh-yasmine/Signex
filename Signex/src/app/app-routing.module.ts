@@ -17,6 +17,13 @@ import { MailComponent } from './mail/mail.component';
 import { TrashBinComponent } from './trash-bin/trash-bin.component';
 import { VisitorCodeComponent } from './visitor-code/visitor-code.component';
 import { PdfComponent } from './pdf/pdf.component';
+import { UploadchoiceComponent } from './uploadchoice/uploadchoice.component';
+import { UpandsignComponent } from './upandsign/upandsign.component';
+import { ARDComponent } from './ard/ard.component';
+import { SignComponent } from './sign/sign.component';
+import { RefuseComponent } from './refuse/refuse.component';
+import { SentComponent } from './sent/sent.component';
+
 
 
 
@@ -38,6 +45,12 @@ const routes: Routes = [
   {path: 'trash', component: TrashBinComponent},
   {path: 'verification' , component: VisitorCodeComponent},
   {path: 'pdf' , component: PdfComponent},
+  {path: 'choice' , component: UploadchoiceComponent},
+  {path: 'upsign' , component: UpandsignComponent},
+  {path: 'ard' , component: ARDComponent},
+  {path: 'sign' , component: SignComponent},
+  {path: 'refuse' , component: RefuseComponent},
+  {path: 'sent' , component: SentComponent},
 ];
 
 @NgModule({

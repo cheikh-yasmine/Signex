@@ -1,0 +1,67 @@
+
+
+<app-usernav></app-usernav>
+<body>
+<aside id="sidebar" class="sidebar">
+  
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="Mydocuments">
+         <i class="fa-solid fa-folder-open"></i>
+          <span>My documents</span>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link " href="choice">
+            <i class="fa-solid fa-pen"></i>
+          <span>Upload new</span>
+        </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed " href="sent">
+           <i class="fa-solid fa-paper-plane"></i>   
+            <span>Sent</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="trash">
+           <i class="fa-solid fa-trash"></i>   
+            <span>Trash bin </span>
+          </a>
+        </li>
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="">
+           <i class="fa-solid fa-ban"></i> 
+            <span>Refused</span>
+          </a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="">
+         <i class="fa-solid fa-check"></i>
+          <span >Accepted</span>
+        </a>
+      </li>
+  <br>
+    </ul>
+
+  </aside>
+  <main id="main" class="main">
+    <section class="section">
+ 
+     <div class="container mt-3 card">
+       <h3 class="titre-card">Upload Document</h3>
+       <br>          
+
+
+       <h5>If your document is already signed </h5>
+       <br>  
+       <button type="submit" class="sumbmit-btn" (click)="gotoupload()">Upload signed document</button>
+       <br>
+       <h5>If you want to upload and sign your document </h5   >
+       <br>
+       <button type="submit" class="sumbmit-btn" (click)="gotoupsign()" >Upload and sign document</button>
+       <br>
+         
+     </div>
+   
