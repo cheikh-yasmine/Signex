@@ -1,121 +1,281 @@
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<body>
+
+<body> 
     <header id="header" class="header fixed-top d-flex align-items-center">
-      <a href="accueil" class="logo d-flex align-items-center">
-          <img src="./../../assets/image/signex logo.png">
-          <span class="d-none d-lg-block">SignEX</span>
-        </a>
-        <i class="bi bi-list toggle-sidebar-btn"></i>
-      
-      <div class="search-bar">
-        <form class="search-form d-flex align-items-center" method="POST" action="#">
-          <input type="text" name="query" placeholder="Search user" title="Enter search keyword">
-          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-        </form>
-      </div>
-      <nav class="header-nav ms-auto">
-        <ul class="d-flex align-items-center" style="text-decoration: none; ">
-
-            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="adminProfile" >
-              <img src="./../../assets/image/pfp.png" alt="Profile" class="rounded-circle">
-              <span class="d-none d-md-block ps-2">Admin</span>
-            </a>
-        </ul>
-      </nav>
-    </header>
-    <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
   
-      <ul class="sidebar-nav" id="sidebar-nav">
-
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="adminDashboard">
-            <span>Users table</span>
+        <div class="d-flex align-items-center justify-content-between">
+          <a href="accueil" class="logo d-flex align-items-center">
+            <img src="./../../assets/image/signex logo.png" class="logo-icone">
+          <span class="d-none d-lg-block logo-title">Sign Ex</span>
           </a>
-        </li>
-
-        <li class="nav-heading">__________________________________</li>
-
-        <li class="nav-item">
-            <a class="nav-link " href="adminUser">
-              <span>Add Users</span>
-            </a>
-          </li>
-  
-          <li class="nav-item">
-            <a class="nav-link collapsed" href="adminEvent">
-              <span>Delete Users</span>
-            </a>
-          </li>
-  
-          <li class="nav-item">
-            <a class="nav-link collapsed" href="adminActu">
-              <span>Update Users Information</span>
-            </a>
-          </li>
-        <li class="nav-heading">__________________________________</li>
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="adminProfile">
-            <span>Profile</span>
-          </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="# ">
-              <span>Messages</span>
-            </a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="home">
-            <span (click)="logout()">Logout</span>
-          </a>
-        </li>
-  
-      </ul>
-  
-    </aside>
-  
-    <main id="main" class="main">
-      <div class="pagetitle">
-        <h1>Add Users</h1>   
-      </div>
-      <section class="section profile">
-       
-  <!-- Table -->
-  <table class="table">
-    <thead>
-      <tr>
-
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Username</th>
-        <th scope="col">Email</th>
-        <!-- <th scope="col">Password</th> -->
-        <th scope="col">Date</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-
-     <tr *ngFor="let user of users">
-        <td>{{user.id}}</td>
-        <td>{{user.firstName}}</td>
-        <td>{{user.lastName}}</td>
-        <td>{{user.username}}</td>
-        <td>{{user.email}}</td>
-        <!-- <td>{{user.password}}</td> -->
-        <td>{{user.creationDate}}</td>
-        <td><button class="btn btn-warning text-light" (click)="updateUser(user.id)" >Update</button>&nbsp; &nbsp;
-          <button class="btn btn-danger text-light" (click)="deleteUser()">Delete</button>
-        </td>
-      </tr> 
-    </tbody>
-  </table>
-  <a href="signup"><button class="btn btn-info text-light text-center ">Ajouter</button> </a>
-      
-</section>
-    </main>
-  </body>
+          <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
     
- 
+        <div class="search-bar">
+          <form class="search-form d-flex align-items-center">
+            <input type="text" name="query" placeholder="Search" title="Enter search keyword" >
+            <button type="submit" title="Search" ><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div><!-- End Search Bar -->
+    
+        <nav class="header-nav ms-auto">
+          <ul class="d-flex align-items-center">
+    
+              <a class="nav-link nav-profile d-flex align-items-center pe-0" href="adminProfile">
+                <i class="fa-solid fa-circle-user admin"></i>
+                <span class="d-none d-md-block ps-2 pe-2 admin">admin</span>
+              </a>
+          </ul>
+        </nav>
+      </header> 
+      <aside id="sidebar" class="sidebar">
+       <br>
+        <ul class="sidebar-nav" id="sidebar-nav">
   
+          <li class="nav-item">
+            <a class="nav-link " href="profile">
+                <i class="fa-solid fa-chart-line"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="UserProfileUpdate">
+                <i class="fa-solid fa-users"></i>
+              <span>Users</span>
+            </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="UserProfileforgotPassword">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>Files</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="favoris">
+                <i class="fa-solid fa-file-signature"></i>
+                <span>Visitors</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="notification">
+                <i class="fa-solid fa-bell"></i>
+                <span >Meeting</span>
+              </a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link collapsed" href="historiqueReservationn">
+                <i class="fa-solid fa-xmark"></i>
+                <span>Refuse</span>
+              </a>
+            </li>
+     
+          <br>
+      <br>
+      <hr style="color: white;">
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="">
+          <i class="fa-solid fa-arrow-right-from-bracket pp"></i>
+          <span >Log out</span>
+        </a>
+      </li>
+        </ul>
+    
+      </aside>
+      
+    <main id="main" class="main">
+ 
+      <div class="pagetitle">
+        
+        <h1>Dashboard</h1>
+      </div><!-- End Page Title -->
+  
+      <section class="section dashboard">
+        <div class="row">
+  
+          <!-- Left side columns -->
+          <div class="col-lg-8">
+            <div class="row">
+  
+              <!-- Sales Card -->
+              <div class="col-xxl-4 col-md-6">
+                <div class="card info-card sales-card card-one">
+  
+                  
+  
+                  <div class="card-body ">
+                    <h5 class="card-title">Users <span style="color: white;">| total</span></h5>
+  
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-users"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>145</h6>
+                        <!-- <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span> -->
+  
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+  
+              <!-- Revenue Card -->
+              <div class="col-xxl-4 col-md-6 ">
+                <div class="card info-card revenue-card card-two ">
+  
+                  <div class="card-body">
+                    <h5 class="card-title">Visitors <span style="color: white;">| Signed</span></h5>
+  
+                    <div class="d-flex align-items-center ">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        &nbsp; <i class="fa-solid fa-file-signature"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>8</h6>
+                        <!-- <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span> -->
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+  
+              <!-- Customers Card -->
+              <div class="col-xxl-4 col-md-6">
+                <div class="card info-card customers-card card-two">
+  
+                  
+  
+                  <div class="card-body ">
+                    <h5 class="card-title">Refuse <span style="color: white;">| Number</span></h5>
+  
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-xmark"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>18</h6>
+                        <!-- <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span> -->
+  
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+              <!-- Reports -->
+              <div class="col-6">
+                <div class="card card-four info-card event-card card-two ">
+  
+                 
+  
+                  <div class="card-body ">
+                    <h5 class="card-title">Meeting <span style="color: white;">| Number</span></h5>
+  
+                    <!-- Line Chart -->
+                    <div id="reportsChart"></div>
+  
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="fa-regular fa-calendar-check"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>45</h6>
+  
+                      </div>
+                    </div>
+  
+                  </div>
+  
+                </div>
+              </div>
+  
+
+   <!-- Recent Sales -->
+   <div class="col-6">
+    <div class="card overflow-auto card-five info-card post-card ">
+
+      <div class="card-body ">
+        <h5 class="card-title">Download <span style="color: white;">|  files</span></h5>
+        <div id="reportsChart"></div>
+  
+        <div class="d-flex align-items-center">
+          <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-file-arrow-down"></i>
+          </div>
+          <div class="ps-3">
+            <h6>36</h6>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+<div class="col-6 user-card-box">
+  <div class="card card-side card-five info-card users-card">
+    <div class="filter">
+      
+    </div>
+
+    <div class="card-body pb-3 ">
+      <h5 class="card-title"> Files <span style="color: white;">| Totle</span></h5>
+
+      <div class="d-flex align-items-center">
+        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+            &nbsp;  <i class="fa-solid fa-file-pdf"></i>
+        </div>
+        <div class="ps-3">
+          <h6>45</h6>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  
+            </div>
+          </div><!-- End Left side columns -->
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <!-- Right side columns -->
+          <div class="col-lg-4">
+           
+            <!-- Budget Report -->
+            <div class="card card-side">
+              <div class="filter">
+                
+              </div>
+  
+              <div class="card-body pb-0 ">
+                <h5 class="card-title">Categories<span style="color: white;"> | files </span></h5>
+                 <ul>
+                    <li class="list-file">Contracts</li>
+                    <li class="list-file">Agreements and Conventions</li>
+                    <li class="list-file">Financial Documents</li>
+                    <li class="list-file">Legal Documents</li>
+                    <li class="list-file">Administrative Documents</li>
+                    <li class="list-file">Medical Documents</li>
+                    <li class="list-file">Academic Documents</li>
+                    <li class="list-file">Immigration</li>
+                    <li class="list-file">Insurance Documents</li>
+                    <li class="list-file">Intellectual Property</li>
+                    <li class="list-file">Workplace</li>
+                    <li class="list-file">Commercial</li>
+                    
+                    
+                 </ul>
+              </div>
+            </div>
+            <!-- <div class="card card-side">
+              <div class="filter">
+                
+              </div>
+  
+              <div class="card-body pb-0 ">
+                <h5 class="card-title"> les Objets <span style="color: white;">| messages</span></h5>
+
+                
+              </div>
+            </div> -->

@@ -252,8 +252,8 @@ a:hover {
 
  
   .refresh{
-    position: absolute;
-    margin-left: 350px;
+   
+    margin-left: 10px;
     border: 1px solid #ddd;
     background-color: #036691; 
     border-radius: 30px;
@@ -460,4 +460,34 @@ padding: 15px;
 .btn-drops{
     display: flex;
     margin-left: 169px; 
+}
+
+.categ-btn{
+  background-color: transparent;
+  border: #00264D solid 2px;
+  color: #00264D;
+  border-radius: 20px;
+  font-size: 12px;
+  margin: 5px;
+  padding: 5px 15px 7px 15px;
+}
+
+.categ-btn-active{
+  background-color: #00264D;
+  border: #00264D solid 2px;
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  margin: 5px;
+  padding: 5px 15px 7px 15px;
+}
+
+.categ-btn:hover{
+  background-color: #00264D;
+  border: #00264D solid 2px;
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  margin: 5px;
+  padding: 5px 15px 7px 15px;
 }

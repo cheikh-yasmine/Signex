@@ -1,29 +1,33 @@
-
 <body>
-    <a href="ard">
-      <img class="back" src="./../../assets/image/back.png" > 
-  </a>
-    <main>
-      <div class="container mt-3 card">
-          <h3 class="titre-card">Refuse Document</h3>
-          <form >
-         <label for="signature">Do you have any remarks concerning the refusal of this document ? </label>
+  <a href="ard">
+    <img class="back" src="./../../assets/image/back.png" > 
+</a>
+  <main>
+    <div class="container card mb-2">
+        <h3 class="titre-card">Refuse Document</h3>
+        <form >
+       <label for="signature">Do you have any remarks concerning the refusal of this document ? </label>
+       <br>
+         <textarea name="body"  placeholder="Enter text"></textarea>
+         <label for="signature">Would you like to schedule a meeting to discuss the refusal of this document ?  </label>
          <br>
-           <textarea name="body"  placeholder="enter text"></textarea>
-           <label for="signature">Would you like to schedule a meeting to discuss the refusal of this document ?  </label>
-           <br>
-           <button type="submit" >Schedule a meeting </button>
-           &nbsp;  &nbsp;
-           <button type="submit" (click)="download()"> Refuse </button>
+         <div class="btns d-flex">
+         <button type="submit"(click)="gotoCalender()" class="Schedule">Schedule a meeting </button>
+         &nbsp;  &nbsp;
+         <button type="submit" (click)="refuse()" class="Refuse"> Refuse </button>
+      </div>
+        <br>
+         <div *ngIf="downornah" class="alert alert-success" role="alert">
+          Would you like to download the document anyways ? 
           <br>
-           <div *ngIf="downornah" class="alert alert-success" role="alert">
-            Would you like to download the document anyways ? 
-            &nbsp; &nbsp; &nbsp;  
-       <button class="button-81"> yes </button> &nbsp; &nbsp; <button class="button-81"> no </button>
-          </div>
-          
-         </form>
-     </div> 
-    </main>
-  </body>
+          <div class="btns-alert">
+     <button class="button-81" (click)="download()"> yes </button> &nbsp; &nbsp; 
+     <button class="button-81" (click)="goVisit()"> no </button>
+  </div>
+        </div>
+        
+       </form>
+   </div> 
+  </main>
+</body>
   

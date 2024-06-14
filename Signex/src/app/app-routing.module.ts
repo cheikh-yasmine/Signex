@@ -23,6 +23,9 @@ import { ARDComponent } from './ard/ard.component';
 import { SignComponent } from './sign/sign.component';
 import { RefuseComponent } from './refuse/refuse.component';
 import { SentComponent } from './sent/sent.component';
+import { ContractsComponent } from './contracts/contracts.component';
+import { AgreementComponent } from './agreement/agreement.component';
+import { LegalComponent } from './legal/legal.component';
 
 
 
@@ -51,6 +54,9 @@ const routes: Routes = [
   {path: 'sign' , component: SignComponent},
   {path: 'refuse' , component: RefuseComponent},
   {path: 'sent' , component: SentComponent},
+  {path: 'contacts' , component: ContractsComponent},
+  {path: 'agr' , component: AgreementComponent},
+  {path: 'medical' , component: LegalComponent},
 ];
 
 @NgModule({

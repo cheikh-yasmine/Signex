@@ -33,6 +33,12 @@ import { ARDComponent } from './ard/ard.component';
 import { SignComponent } from './sign/sign.component';
 import { RefuseComponent } from './refuse/refuse.component';
 import { SentComponent } from './sent/sent.component';
+import { FinanceComponent } from './finance/finance.component';
+import { EducationComponent } from './education/education.component';
+import { LegalComponent } from './legal/legal.component';
+import { ContractsComponent } from './contracts/contracts.component';
+import { AgreementComponent } from './agreement/agreement.component';
+import { CalendarComponent } from './calendar/calendar.component';
 initializeApp(environnement.firebase);
 @NgModule({
   declarations: [
@@ -61,7 +67,13 @@ initializeApp(environnement.firebase);
      ARDComponent,
      SignComponent,
      RefuseComponent,
-     SentComponent
+     SentComponent,
+     FinanceComponent,
+     EducationComponent,
+     LegalComponent,
+     ContractsComponent,
+     AgreementComponent,
+     CalendarComponent
   ],
   imports: [
     BrowserModule,

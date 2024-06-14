@@ -106,8 +106,8 @@ password:String="";
           });
         } else {
           Swal.fire({
-            title: "Error",
-            text: "Invalid verification code.",
+            title: "Invalid verification code.",
+            text: "Please try again. ",
             icon: "error"
           });
         }

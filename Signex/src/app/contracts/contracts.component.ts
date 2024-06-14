@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FileService } from '../file.service';
+import { Router } from '@angular/router';
 import { FileUploadEntity } from '../Models/FileUploadEntity';
 import Swal from 'sweetalert2'
-import { Router } from '@angular/router';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 @Component({
-  selector: 'app-file-view',
-  templateUrl: './file-view.component.html',
-  styleUrls: ['./file-view.component.css']
+  selector: 'app-contracts',
+  templateUrl: './contracts.component.html',
+  styleUrls: ['./contracts.component.css']
 })
-export class FileViewComponent implements OnInit {
+export class ContractsComponent {
   files: FileUploadEntity[] = []; 
   selectedFile: FileUploadEntity | null = null;
   pdfSrc: string | null = null; // Add this line
@@ -87,7 +87,6 @@ refresh(){
  openpdf(){
   this.router.navigate(['pdf']);
  }
-
  contact(){
   this.router.navigate(['contacts']);
  }
@@ -104,40 +103,4 @@ refresh(){
  all(){
   this.router.navigate(['Mydocuments']);
  }
-
-
-//  selectFile(file: FileUploadEntity, event: any) : void{
-  
-//   this.selectedFile = file;
-//   const fileId = file.fileId;
-//   const isSelected = event.target.checked;
-//   this.selectedFiles[fileId] = isSelected;  
-// }
-
-
-// viewPDF(file: FileUploadEntity): void {
-//   if (this.selectedFile) {
-//     const reader = new FileReader();
-//     reader.onload = (e: any) => {
-//       if (e.target.result && typeof e.target.result === 'string') {
-        
-//         this.pdfSrc = e.target.result;
-//       } else {
-//         console.error('Error reading PDF file!');
-      
-//       }
-//     };
-//     reader.onerror = (error) => {
-//       console.error('Error reading file:', error);
-     
-//     };
-//     reader.readAsDataURL(this.selectedFile.file);
-//   }
-//   else {
-//     console.error('No file selected for viewing!');}
-// }
-
-
-
-
 }
